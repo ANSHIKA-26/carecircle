@@ -35,11 +35,12 @@ const Navbar = () => {
           <li>
             <NavLink to={"/"}>Home</NavLink>
           </li>
-          <li>
-                <NavLink to={"/applyfordoctor"}>Apply for doctor</NavLink>
-              </li>
-          <li>
+          <li className="dropdown">
             <NavLink to={"/doctors"}>Doctors</NavLink>
+            <div className="dropdown-content">
+              <NavLink to={"/applyfordoctor"}>Join our team</NavLink>
+              <NavLink to={"/doctors"}>Our team</NavLink>
+            </div>
           </li>
           {token && user.isAdmin && (
             <li>
@@ -55,9 +56,6 @@ const Navbar = () => {
                 <NavLink to={"/notifications"}>Notifications</NavLink>
               </li>
               <li>
-                <NavLink to={"/applyfordoctor"}>Apply for doctor</NavLink>
-              </li>
-              <li>
                 <HashLink to={"/#contact"}>Contact Us</HashLink>
               </li>
               <li>
@@ -68,52 +66,43 @@ const Navbar = () => {
           {!token ? (
             <>
               <li>
-                <NavLink
-                  className="btn"
-                  to={"/login"}
-                >
+                <NavLink className="btn" to={"/login"}>
                   Login
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  className="btn"
-                  to={"/register"}
-                >
+                <NavLink className="btn" to={"/register"}>
                   Register
                 </NavLink>
               </li>
             </>
           ) : (
             <li>
-              <span
-                className="btn"
-                onClick={logoutFunc}
-              >
+              <span className="btn" onClick={logoutFunc}>
                 Logout
               </span>
             </li>
           )}
         </ul>
+        <div className="menu-icons">
+          {!iconActive && (
+            <FiMenu
+              className="menu-open"
+              onClick={() => {
+                setIconActive(true);
+              }}
+            />
+          )}
+          {iconActive && (
+            <RxCross1
+              className="menu-close"
+              onClick={() => {
+                setIconActive(false);
+              }}
+            />
+          )}
+        </div>
       </nav>
-      <div className="menu-icons">
-        {!iconActive && (
-          <FiMenu
-            className="menu-open"
-            onClick={() => {
-              setIconActive(true);
-            }}
-          />
-        )}
-        {iconActive && (
-          <RxCross1
-            className="menu-close"
-            onClick={() => {
-              setIconActive(false);
-            }}
-          />
-        )}
-      </div>
     </header>
   );
 };
