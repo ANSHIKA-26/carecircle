@@ -61,9 +61,7 @@ function App() {
           <Route
             path="/applyfordoctor"
             element={
-              <Protected>
                 <ApplyDoctor />
-              </Protected>
             }
           />
           <Route

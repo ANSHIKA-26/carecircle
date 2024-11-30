@@ -7,8 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Empty from "./Empty";
 import fetchData from "../helper/apiCall";
 
-axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
-
 const Users = () => {
   const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
