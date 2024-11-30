@@ -3,8 +3,6 @@ import toast from "react-hot-toast";
 import "../styles/doctorapply.css";
 import axios from "axios";
 
-axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
-
 function DoctorApply() {
   const [formDetails, setFormDetails] = useState({
     specialization: "",

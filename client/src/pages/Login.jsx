@@ -8,8 +8,6 @@ import { setUserInfo } from "../redux/reducers/rootSlice";
 import jwt_decode from "jwt-decode";
 import fetchData from "../helper/apiCall";
 
-axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
-
 function Login() {
   const dispatch = useDispatch();
   const [formDetails, setFormDetails] = useState({
