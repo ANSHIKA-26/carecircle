@@ -1,4 +1,4 @@
-@import url(app.css);
+@import url('./variables.css');
 
 .hero {
   display: flex;
@@ -41,17 +41,21 @@
   .hero {
     height: auto;
   }
+
   .hero,
   .about {
     flex-direction: column;
   }
+
   .hero-content {
     margin-top: 2rem;
     align-items: center;
   }
+
   .hero-content h1 {
     text-align: center;
   }
+
   .about-heading {
     margin-top: 4rem;
   }
