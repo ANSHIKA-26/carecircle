@@ -6,6 +6,7 @@ const fetchData = async (url) => {
   const { data } = await axios.get(url, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Content-Type": "application/json",
     },
   });
   return data;

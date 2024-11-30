@@ -14,6 +14,7 @@ function ApplyDoctor() {
     confpassword: "",
     specialization: "",
     experience: "",
+    fees: "",
   });
   const navigate = useNavigate();
 
@@ -31,8 +32,8 @@ function ApplyDoctor() {
 
       if (loading) return;
 
-      const { firstname, lastname, email, password, confpassword, specialization, experience } = formDetails;
-      if (!firstname || !lastname || !email || !password || !confpassword || !specialization || !experience) {
+      const { firstname, lastname, email, password, confpassword, specialization, experience, fees } = formDetails;
+      if (!firstname || !lastname || !email || !password || !confpassword || !specialization || !experience || !fees) {
         return toast.error("Input field should not be empty");
       } else if (firstname.length < 3) {
         return toast.error("First name must be at least 3 characters long");
@@ -45,14 +46,15 @@ function ApplyDoctor() {
       }
 
       await toast.promise(
-        axios.post("/user/register", {
+        axios.post("/doctor/applyfordoctor", {
           firstname,
           lastname,
           email,
           password,
           specialization,
           experience,
-        }),
+          fees,
+        }).catch((error) => toast.error(error.message) ),
         {
           pending: "Registering user...",
           success: "User registered successfully",
@@ -125,6 +127,14 @@ function ApplyDoctor() {
             className="form-input"
             placeholder="Enter your experience in years"
             value={formDetails.experience}
+            onChange={inputChange}
+          />
+          <input
+            type="number"
+            name="fees"
+            className="form-input"
+            placeholder="Enter your fees"
+            value={formDetails.fees}
             onChange={inputChange}
           />
           <button
