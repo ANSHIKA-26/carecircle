@@ -6,7 +6,7 @@ import fetchData from "../helper/apiCall";
 import { setLoading } from "../redux/reducers/rootSlice";
 import Loading from "../components/Loading";
 import { useDispatch, useSelector } from "react-redux";
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import toast from "react-hot-toast";
 import "../styles/user.css";
@@ -15,7 +15,7 @@ const Appointments = () => {
   const [appointments, setAppointments] = useState([]);
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.root);
-  const { userId } = jwt_decode(localStorage.getItem("token"));
+  const { userId } = jwtDecode(localStorage.getItem("token"));
 
   const getAllAppoint = async (e) => {
     try {
