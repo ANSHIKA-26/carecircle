@@ -1,0 +1,7 @@
+.bg-floral-red {
+  background-color: var(--floral-red);
+}
+
+.fill-floral-red {
+  fill: var(--floral-red);
+}

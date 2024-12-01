@@ -4,6 +4,9 @@ import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
 import { HashLink } from "react-router-hash-link";
 import { NavLink } from "react-router-dom";
 
+import Logo from "./Logo";
+import SvgIcon from "./SvgIcon";
+
 const Footer = () => {
   return (
     <>
@@ -65,16 +68,11 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="footer-bottom">
-          Made by{" "}
-          <a
-            href="www.google.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            team carecircle
-          </a>{" "}
-          © {new Date().getFullYear()}
+        <div className="footer-bottom gap-4">
+          Made by with
+          <SvgIcon name="heart" className="wh-24 fill-floral-red" />
+          by <Logo/>
+          <span> © {new Date().getFullYear()} All rights reserved.</span>
         </div>
       </footer>
     </>
