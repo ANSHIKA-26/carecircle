@@ -8,6 +8,8 @@ import { FiMenu } from "react-icons/fi";
 import { RxCross1 } from "react-icons/rx";
 import { jwtDecode } from "jwt-decode";
 
+import Logo from "./Logo.jsx";
+
 const Navbar = () => {
   const [iconActive, setIconActive] = useState(false);
   const dispatch = useDispatch();
@@ -28,19 +30,24 @@ const Navbar = () => {
   return (
     <header>
       <nav className={iconActive ? "nav-active" : ""}>
-        <h2 className="nav-logo">
-          <NavLink to={"/"}>CareCircle</NavLink>
-        </h2>
+        <NavLink className="d-flex gap-8" to={"/"}>
+            <Logo />
+            <h2 className="nav-logo m-auto">
+              CareCircle
+            </h2>
+          </NavLink>
         <ul className="nav-links">
           <li>
             <NavLink to={"/"}>Home</NavLink>
           </li>
           <li className="dropdown">
             <NavLink to={"/doctors"}>Doctors</NavLink>
-            <div className="dropdown-content">
-              <NavLink to={"/applyfordoctor"}>Join our team</NavLink>
-              <NavLink to={"/doctors"}>Our team</NavLink>
-            </div>
+            { !token && !user && (
+              <div className="dropdown-content">
+                <NavLink to={"/applyfordoctor"}>Join our team</NavLink>
+                <NavLink to={"/doctors"}>Our team</NavLink>
+              </div>
+            )}
           </li>
           {token && user.isAdmin && (
             <li>
