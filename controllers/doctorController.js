@@ -162,6 +162,22 @@ const deletedoctor = async (req, res) => {
   }
 };
 
+const getAppointments = async (req, res) => {
+  try {
+    const doctorId = req.user._id; // Assuming req.user contains the authenticated user's info
+    const appointments = await Appointment.find({ doctor: doctorId });
+
+    if (!appointments) {
+      return res.status(404).json({ message: "No appointments found" });
+    }
+
+    return res.status(200).json({ appointments });
+  } catch (error) {
+    return res.status(500).json({ message: "Error fetching appointments", error });
+  }
+};
+
+
 module.exports = {
   getalldoctors,
   getnotdoctors,
@@ -169,4 +185,5 @@ module.exports = {
   applyfordoctor,
   acceptdoctor,
   rejectdoctor,
+  getAppointments,
 };
