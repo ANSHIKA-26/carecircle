@@ -67,8 +67,8 @@ const Navbar = () => {
                 <HashLink to={"/#contact"}>Contact Us</HashLink>
               </li>
               <li>
-                <NavLink to={"/profile"}>
-                  Profile
+                <NavLink to={"/profile"} className="d-flex gap-4">
+                  <SvgIcon name="avatar" className="wh-24 fill-knight-black" />
                 </NavLink>
               </li>
             </>

@@ -5,3 +5,7 @@
 .fill-floral-red {
   fill: var(--floral-red);
 }
+
+.fill-knight-black {
+  fill: var(--knight-black);
+}
