@@ -3,10 +3,10 @@ import "../styles/logo.css";
 
 const Logo = () => {
   return (
-    <div class="logo-container">
-        <div class="logo">
-            <span class="normal-c">C</span>
-            <span class="inverted-c">C</span>
+    <div className="logo-container">
+        <div className="logo">
+            <span className="normal-c">C</span>
+            <span className="inverted-c">C</span>
         </div>
     </div>
   );
