@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Loading from "../components/Loading";
 import fetchData from "../helper/apiCall";
 import { jwtDecode } from "jwt-decode";
+import Navbar from "../components/Navbar";
 
 function Profile() {
   const { userId } = jwtDecode(localStorage.getItem("token"));
@@ -114,6 +115,7 @@ function Profile() {
 
   return (
     <>
+      <Navbar />
       {loading ? (
         <Loading />
       ) : (

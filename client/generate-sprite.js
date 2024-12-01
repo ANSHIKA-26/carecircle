@@ -5,8 +5,8 @@ const path = require('path');
 const config = {
   mode: {
     symbol: {
-      dest: '.', // destination folder
-      sprite: 'sprite.svg', // sprite file name
+      dest: '.',
+      sprite: 'sprite.svg',
     },
   },
 };
