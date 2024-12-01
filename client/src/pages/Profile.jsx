@@ -6,10 +6,10 @@ import { setLoading } from "../redux/reducers/rootSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../components/Loading";
 import fetchData from "../helper/apiCall";
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 function Profile() {
-  const { userId } = jwt_decode(localStorage.getItem("token"));
+  const { userId } = jwtDecode(localStorage.getItem("token"));
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.root);
   const [file, setFile] = useState("");

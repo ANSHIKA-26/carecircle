@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { setUserInfo } from "../redux/reducers/rootSlice";
 import { FiMenu } from "react-icons/fi";
 import { RxCross1 } from "react-icons/rx";
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 const Navbar = () => {
   const [iconActive, setIconActive] = useState(false);
@@ -15,7 +15,7 @@ const Navbar = () => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [user, setUser] = useState(
     localStorage.getItem("token")
-      ? jwt_decode(localStorage.getItem("token"))
+      ? jwtDecode(localStorage.getItem("token"))
       : ""
   );
 
