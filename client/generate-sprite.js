@@ -7,6 +7,7 @@ const config = {
     symbol: {
       dest: '.', // destination folder
       sprite: 'sprite.svg', // sprite file name
+      inline: true
     },
   },
 };

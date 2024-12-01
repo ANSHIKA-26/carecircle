@@ -9,6 +9,7 @@ import { RxCross1 } from "react-icons/rx";
 import { jwtDecode } from "jwt-decode";
 
 import Logo from "./Logo.jsx";
+import SvgIcon from "./SvgIcon.jsx";
 
 const Navbar = () => {
   const [iconActive, setIconActive] = useState(false);
@@ -66,7 +67,9 @@ const Navbar = () => {
                 <HashLink to={"/#contact"}>Contact Us</HashLink>
               </li>
               <li>
-                <NavLink to={"/profile"}>Profile</NavLink>
+                <NavLink to={"/profile"}>
+                  Profile
+                </NavLink>
               </li>
             </>
           )}
