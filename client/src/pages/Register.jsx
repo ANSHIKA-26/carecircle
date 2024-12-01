@@ -4,6 +4,8 @@ import "../styles/register.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+import MinimalNavbar from "../components/MinimalNavbar";
+
 function Register() {
   const [loading, setLoading] = useState(false);
   const [formDetails, setFormDetails] = useState({
@@ -63,66 +65,69 @@ function Register() {
   };
 
   return (
-    <section className="register-section flex-center">
-      <div className="register-container flex-center">
-        <h2 className="form-heading">Sign Up</h2>
-        <form onSubmit={formSubmit} className="register-form">
-          <input
-            type="text"
-            name="firstname"
-            className="form-input"
-            placeholder="Enter your first name"
-            value={formDetails.firstname}
-            onChange={inputChange}
-          />
-          <input
-            type="text"
-            name="lastname"
-            className="form-input"
-            placeholder="Enter your last name"
-            value={formDetails.lastname}
-            onChange={inputChange}
-          />
-          <input
-            type="email"
-            name="email"
-            className="form-input"
-            placeholder="Enter your email"
-            value={formDetails.email}
-            onChange={inputChange}
-          />
-          <input
-            type="password"
-            name="password"
-            className="form-input"
-            placeholder="Enter your password"
-            value={formDetails.password}
-            onChange={inputChange}
-          />
-          <input
-            type="password"
-            name="confpassword"
-            className="form-input"
-            placeholder="Confirm your password"
-            value={formDetails.confpassword}
-            onChange={inputChange}
-          />
-          <button
-            type="submit"
-            className="btn form-btn"
-            disabled={loading}
-          >
-            Sign Up
-          </button>
-        </form>
-        <p>
-          Already a user?{" "}
-          <NavLink className="login-link" to={"/login"}>
-            Log in
-          </NavLink>
-        </p>
-      </div>
-    </section>
+    <>
+      <MinimalNavbar />
+      <section className="register-section flex-center">
+        <div className="register-container flex-center">
+          <h2 className="form-heading">Sign Up</h2>
+          <form onSubmit={formSubmit} className="register-form">
+            <input
+              type="text"
+              name="firstname"
+              className="form-input"
+              placeholder="Enter your first name"
+              value={formDetails.firstname}
+              onChange={inputChange}
+            />
+            <input
+              type="text"
+              name="lastname"
+              className="form-input"
+              placeholder="Enter your last name"
+              value={formDetails.lastname}
+              onChange={inputChange}
+            />
+            <input
+              type="email"
+              name="email"
+              className="form-input"
+              placeholder="Enter your email"
+              value={formDetails.email}
+              onChange={inputChange}
+            />
+            <input
+              type="password"
+              name="password"
+              className="form-input"
+              placeholder="Enter your password"
+              value={formDetails.password}
+              onChange={inputChange}
+            />
+            <input
+              type="password"
+              name="confpassword"
+              className="form-input"
+              placeholder="Confirm your password"
+              value={formDetails.confpassword}
+              onChange={inputChange}
+            />
+            <button
+              type="submit"
+              className="btn form-btn"
+              disabled={loading}
+            >
+              Sign Up
+            </button>
+          </form>
+          <p>
+            Already a user?{" "}
+            <NavLink className="login-link" to={"/login"}>
+              Log in
+            </NavLink>
+          </p>
+        </div>
+      </section>
+    </>
   );
 }
 

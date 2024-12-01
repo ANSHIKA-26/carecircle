@@ -1,3 +1,6 @@
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+
 const Doctor = require("../models/doctorModel");
 const User = require("../models/userModel");
 const Notification = require("../models/notificationModel");
@@ -37,18 +40,61 @@ const getnotdoctors = async (req, res) => {
 };
 
 const applyfordoctor = async (req, res) => {
+  const session = await mongoose.startSession();
+  session.startTransaction();
+
   try {
-    const alreadyFound = await Doctor.findOne({ userId: req.locals });
-    if (alreadyFound) {
-      return res.status(400).send("Application already exists");
+    const { firstname, lastname, email, password, specialization, experience, fees } = req.body;
+
+    // Check if the user already exists
+    const emailPresent = await User.findOne({ email });
+    if (emailPresent) {
+      await session.abortTransaction();
+      session.endSession();
+      return res.status(400).json({ message: "User already exists" });
     }
 
-    const doctor = Doctor({ ...req.body.formDetails, userId: req.locals });
-    const result = await doctor.save();
+    // Hash the password
+    const hashedPass = await bcrypt.hash(password, 10);
 
-    return res.status(201).send("Application submitted successfully");
+    // Create a new user
+    const user = new User({
+      firstname,
+      lastname,
+      email,
+      password: hashedPass,
+    });
+    const savedUser = await user.save({ session });
+
+    if (!savedUser) {
+      await session.abortTransaction();
+      session.endSession();
+      return res.status(500).json({ message: "Unable to apply for doctor" });
+    }
+
+    // Create a new doctor application
+    const doctor = new Doctor({
+      userId: savedUser._id,
+      specialization,
+      experience,
+      fees
+    });
+    const result = await doctor.save({ session });
+
+    if (!result) {
+      await session.abortTransaction();
+      session.endSession();
+      return res.status(500).json({ message: "Unable to apply for doctor" });
+    }
+
+    await session.commitTransaction();
+    session.endSession();
+    return res.status(201).json({ message: "Doctor application successful" });
   } catch (error) {
-    res.status(500).send("Unable to submit application");
+    await session.abortTransaction();
+    session.endSession();
+    console.error("Error during doctor application:", error);
+    res.status(500).json({ message: "Unable to apply for doctor" });
   }
 };
 

@@ -1,18 +1,16 @@
+@import url('./variables.css');
+
 header {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
   align-items: center;
-  /* padding: 10px 10%; */
-  /* height: 72px; */
   position: sticky;
-  top: 0%;
-  left: 0%;
+  top: 0;
   background-color: var(--light-blue);
   z-index: 2;
   box-shadow: 0 0 20px 0 rgba(144, 174, 205, 0.339);
-  transition: all 0.2 linear;
+  transition: all 0.2s linear;
 }
 
 nav {
@@ -22,6 +20,20 @@ nav {
   padding: 1rem 2rem;
   align-items: center;
 }
+
+.nav.minimal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: var(--light-blue);
+  z-index: 2;
+  box-shadow: 0 0 20px 0 rgba(144, 174, 205, 0.339);
+  padding: 1rem 0;
+}
+
 
 .nav-logo a,
 .nav-links a {
@@ -41,7 +53,9 @@ nav {
 .nav-links .btn {
   color: var(--white);
   font-size: 0.8rem;
-  padding: 0.4rem 0.8rem;
+  background-color: var(--dark-blue);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
 }
 
 .menu-icons {
@@ -107,8 +121,8 @@ nav {
 @media (max-width: 950px) {
   .nav-links {
     position: fixed;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background-color: var(--light-blue);
@@ -121,10 +135,12 @@ nav {
     gap: 3rem;
     transition: all 0.3s linear;
   }
+
   .nav-active .nav-links {
-    transform: translateX(0%);
+    transform: translateX(0);
     visibility: visible;
   }
+
   .menu-icons {
     display: block;
     position: absolute;
