@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom gap-4">
-          Made by with
+          Made with
           <SvgIcon name="heart" className="wh-24 fill-floral-red" />
           by <Logo/>
           <span> © {new Date().getFullYear()} All rights reserved.</span>
