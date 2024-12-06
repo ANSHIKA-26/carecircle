@@ -6,10 +6,8 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-content">
-        <h1>
-          Care Circle <br />
-          Because Caregivers Deserve Care Too
-        </h1>
+        <h1>CareCircle</h1>
+        <h2>Because caregivers deserve care too</h2>
         <p>
         CareCircle is a support platform designed to uplift caregivers facing the challenges of caretaker syndrome. From booking therapy sessions to accessing paramedical support and healthcare resources, CareCircle ensures that caregivers receive the help they need while providing care to their loved ones
         </p>

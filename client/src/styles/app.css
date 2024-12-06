@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap");
+@import 'normalize.css';
+@import url('./generics/index.css');
+@import url('./tools/index.css');
 @import url('./variables.css');
 @import url('./utilities.css');
 @import url('./sin.css');
@@ -16,7 +19,13 @@ html {
 
 body {
   font-family: var(--font-family);
-  background-color: var(--light-blue);
+  background-color: var(--white);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 li {
