@@ -107,6 +107,11 @@ const DoctorAppointments = () => {
                         <td>{ele?.createdAt.split("T")[0]}</td>
                         <td>{ele?.updatedAt.split("T")[1].split(".")[0]}</td>
                         <td>{ele?.status}</td>
+                        <td>
+                          <a href="https://meet.google.com/abc-defg-edf" target="_blank" rel="noopener noreferrer">
+                            Link for session
+                          </a>
+                        </td>
                         {userId === ele?.doctorId?._id ? (
                           <td>
                             <button

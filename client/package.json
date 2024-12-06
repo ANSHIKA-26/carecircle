@@ -24,7 +24,7 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "start": "BROWSER=none react-scripts start",
+    "start": "react-scripts start",
     "build": "svg && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
