@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Empty from "./Empty";
 import fetchData from "../helper/apiCall";
 import "../styles/user.css";
+import { MDBBtn } from "mdb-react-ui-kit";
 
 const AdminAppointments = () => {
   const [appointments, setAppointments] = useState([]);
@@ -98,7 +99,7 @@ const AdminAppointments = () => {
                         <td>{ele?.updatedAt.split("T")[1].split(".")[0]}</td>
                         <td>{ele?.status}</td>
                         <td>
-                          <button
+                          <MDBBtn
                             className={`btn user-btn accept-btn ${
                               ele?.status === "Completed" ? "disable-btn" : ""
                             }`}
@@ -106,7 +107,7 @@ const AdminAppointments = () => {
                             onClick={() => complete(ele)}
                           >
                             Complete
-                          </button>
+                          </MDBBtn>
                         </td>
                       </tr>
                     );

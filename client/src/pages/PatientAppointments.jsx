@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { MDBBtn } from "mdb-react-ui-kit";
 import Empty from "../components/Empty";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import fetchData from "../helper/apiCall";
 import { setLoading } from "../redux/reducers/rootSlice";
 import Loading from "../components/Loading";
@@ -115,7 +114,7 @@ const PatientAppointments = () => {
                         </td>
                         {userId === ele?.doctorId?._id ? (
                           <td>
-                            <button
+                            <MDBBtn
                               className={`btn user-btn accept-btn ${
                                 ele?.status === "Completed" ? "disable-btn" : ""
                               }`}
@@ -123,7 +122,7 @@ const PatientAppointments = () => {
                               onClick={() => complete(ele)}
                             >
                               Complete
-                            </button>
+                            </MDBBtn>
                           </td>
                         ) : (
                           <></>

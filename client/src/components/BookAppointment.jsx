@@ -3,6 +3,7 @@ import "../styles/bookappointment.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { IoMdClose } from "react-icons/io";
+import { MDBBtn } from "mdb-react-ui-kit";
 
 const BookAppointment = ({ setModalOpen, ele }) => {
   const [formDetails, setFormDetails] = useState({
@@ -75,13 +76,13 @@ const BookAppointment = ({ setModalOpen, ele }) => {
                 value={formDetails.time}
                 onChange={inputChange}
               />
-              <button
+              <MDBBtn
                 type="submit"
                 className="btn form-btn"
                 onClick={bookAppointment}
               >
                 book
-              </button>
+              </MDBBtn>
             </form>
           </div>
         </div>

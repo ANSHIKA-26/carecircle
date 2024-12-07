@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import "../styles/doctorapply.css";
 import axios from "axios";
+import { MDBBtn } from "mdb-react-ui-kit";
 
 function DoctorApply() {
   const [formDetails, setFormDetails] = useState({
@@ -98,9 +99,9 @@ function DoctorApply() {
             <option value="evening">Evening</option>
             <option value="night">Night</option>
           </select>
-          <button type="submit" className="btn form-btn">
+          <MDBBtn type="submit" className="btn form-btn">
             apply
-          </button>
+          </MDBBtn>
         </form>
       </div>
     </section>

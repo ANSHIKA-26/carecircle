@@ -11,7 +11,7 @@ import "../styles/testimonials.css";
 
 export default function App() {
   return (
-    <MDBContainer className="py-5">
+    <MDBContainer className="home-section py-5">
       <MDBRow className="d-flex justify-content-center">
         <MDBCol md="10" xl="8" className="text-center">
           <h3 className="mb-4">Testimonials</h3>

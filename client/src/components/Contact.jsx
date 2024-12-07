@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/contact.css";
+import { MDBBtn } from "mdb-react-ui-kit";
 
 const Contact = () => {
   const [formDetails, setFormDetails] = useState({
@@ -55,12 +56,12 @@ const Contact = () => {
             cols="12"
           ></textarea>
 
-          <button
+          <MDBBtn
             type="submit"
             className="btn form-btn"
           >
-            send
-          </button>
+            Send
+          </MDBBtn>
         </form>
       </div>
     </section>

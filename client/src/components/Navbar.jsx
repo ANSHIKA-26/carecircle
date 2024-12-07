@@ -76,12 +76,12 @@ const Navbar = () => {
           {!token ? (
             <>
               <li>
-                <NavLink className="btn" to={"/login"}>
+                <NavLink className="ripple ripple-surface btn btn-primary" to={"/login"}>
                   Login
                 </NavLink>
               </li>
               <li>
-                <NavLink className="btn" to={"/register"}>
+                <NavLink className="ripple ripple-surface btn btn-primary" to={"/register"}>
                   Register
                 </NavLink>
               </li>

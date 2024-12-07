@@ -8,6 +8,7 @@ import { setUserInfo } from "../redux/reducers/rootSlice";
 import { jwtDecode } from "jwt-decode";
 import fetchData from "../helper/apiCall";
 
+import { MDBBtn } from "mdb-react-ui-kit";
 import MinimalNavbar from "../components/MinimalNavbar";
 
 function Login() {
@@ -93,12 +94,12 @@ function Login() {
               value={formDetails.password}
               onChange={inputChange}
             />
-            <button
+            <MDBBtn
               type="submit"
               className="btn form-btn"
             >
               Sign in
-            </button>
+            </MDBBtn>
           </form>
           <p>
             Not a user?{" "}

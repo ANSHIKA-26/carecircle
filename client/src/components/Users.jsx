@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Empty from "./Empty";
 import fetchData from "../helper/apiCall";
 
+import { MDBBtn } from "mdb-react-ui-kit";
+
 const Users = () => {
   const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
@@ -94,14 +96,14 @@ const Users = () => {
                         <td>{ele?.gender}</td>
                         <td>{ele?.isDoctor ? "Yes" : "No"}</td>
                         <td className="select">
-                          <button
+                          <MDBBtn
                             className="btn user-btn"
                             onClick={() => {
                               deleteUser(ele?._id);
                             }}
                           >
                             Remove
-                          </button>
+                          </MDBBtn>
                         </td>
                       </tr>
                     );

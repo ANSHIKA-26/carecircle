@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Loading from "../components/Loading";
 import fetchData from "../helper/apiCall";
 import { jwtDecode } from "jwt-decode";
+
+import { MDBBtn } from "mdb-react-ui-kit";
 import Navbar from "../components/Navbar";
 
 function Profile() {
@@ -215,12 +217,12 @@ function Profile() {
                   onChange={inputChange}
                 />
               </div>
-              <button
+              <MDBBtn
                 type="submit"
                 className="btn form-btn"
               >
                 update
-              </button>
+              </MDBBtn>
             </form>
           </div>
         </section>

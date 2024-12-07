@@ -1,5 +1,6 @@
 import "../styles/doctorcard.css";
 import React, { useState } from "react";
+import { MDBBtn } from "mdb-react-ui-kit";
 import BookAppointment from "../components/BookAppointment";
 import { toast } from "react-hot-toast";
 
@@ -43,12 +44,12 @@ const DoctorCard = ({ ele }) => {
         <strong>Phone: </strong>
         {ele?.userId?.mobile}
       </p>
-      <button
+      <MDBBtn
         className="btn appointment-btn"
         onClick={handleModal}
       >
         Book Appointment
-      </button>
+      </MDBBtn>
       {modalOpen && (
         <BookAppointment
           setModalOpen={setModalOpen}

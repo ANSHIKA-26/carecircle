@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Empty from "./Empty";
 import fetchData from "../helper/apiCall";
 import "../styles/user.css";
+import { MDBBtn } from "mdb-react-ui-kit";
 
 const AdminApplications = () => {
   const [applications, setApplications] = useState([]);
@@ -129,22 +130,22 @@ const AdminApplications = () => {
                         <td>{ele?.specialization}</td>
                         <td>{ele?.fees}</td>
                         <td className="select">
-                          <button
+                          <MDBBtn
                             className="btn user-btn accept-btn"
                             onClick={() => {
                               acceptUser(ele?.userId?._id);
                             }}
                           >
                             Accept
-                          </button>
-                          <button
+                          </MDBBtn>
+                          <MDBBtn
                             className="btn user-btn"
                             onClick={() => {
                               deleteUser(ele?.userId?._id);
                             }}
                           >
                             Reject
-                          </button>
+                          </MDBBtn>
                         </td>
                       </tr>
                     );
