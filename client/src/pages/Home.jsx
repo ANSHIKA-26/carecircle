@@ -11,11 +11,13 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <Hero />
-      <AboutUs />
-      <HomeCircles />
-      <Testimonials/>
-      <Contact />
+      <section className="content container-1680">
+        <Hero />
+        <AboutUs />
+        <HomeCircles />
+        <Testimonials/>
+        <Contact />
+      </section>
       <Footer />
     </>
   );

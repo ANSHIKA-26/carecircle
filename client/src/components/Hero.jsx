@@ -1,10 +1,10 @@
 import React from "react";
 import image from "../images/heroimg.jpg";
-import "../styles/hero.css";
+import "../styles/home.css";
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero container home-section">
       <div className="hero-content">
         <h1>CareCircle</h1>
         <h2>Because caregivers deserve care too</h2>

@@ -18,7 +18,7 @@ const Contact = () => {
 
   return (
     <section
-      className="register-section flex-center"
+      className="container register-section flex-center home-section"
       id="contact"
     >
       <div className="contact-container flex-center contact">

@@ -72,7 +72,7 @@ function Login() {
       <MinimalNavbar />
       <section className="register-section flex-center">
         <div className="register-container flex-center">
-          <h2 className="form-heading">Sign In</h2>
+          <h2 className="form-heading">Sign in</h2>
           <form
             onSubmit={formSubmit}
             className="register-form"

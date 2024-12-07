@@ -2,7 +2,6 @@
 
 .hero {
   display: flex;
-  height: 90vh;
   width: 80%;
   margin: 0 auto;
   align-items: center;
@@ -27,6 +26,11 @@
 
 .hero-img img {
   width: 100%;
+}
+
+.home-section {
+  padding: 80px 0;
+  margin: 0 auto;
 }
 
 .about {
