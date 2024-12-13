@@ -13,6 +13,16 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+
+// Hello endpoint
+app.get('/api/v1/hello', (req, res) => {
+    res.status(200).json({
+      success: true,
+      message: "Hello, the backend is working!",
+    });
+  });
+
+  
 app.use("/api/user", userRouter);
 app.use("/api/doctor", doctorRouter);
 app.use("/api/appointment", appointRouter);
