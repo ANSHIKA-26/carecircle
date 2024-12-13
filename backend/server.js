@@ -23,6 +23,10 @@ app.use(
 );
 app.options('*', cors())
 
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+});
+
 // Hello endpoint
 app.get('/api/v1/hello', (req, res) => {
     res.status(200).json({
