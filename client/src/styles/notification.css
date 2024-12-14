@@ -1,8 +1,10 @@
 @import url(app.css);
 
 .notif-section {
-  height: 70vh;
   justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
 }
 
 .disable-btn {

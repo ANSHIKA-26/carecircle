@@ -2,6 +2,7 @@
 
 .doctors {
   margin-bottom: 5rem;
+  flex-direction: column;
 }
 
 .doctors-card-container {
