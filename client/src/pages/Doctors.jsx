@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import DoctorCard from "../components/DoctorCard";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import "../styles/doctors.css";
-import fetchData from "../helper/apiCall";
-import Loading from "../components/Loading";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoading } from "../redux/reducers/rootSlice";
+import DoctorCard from "../components/DoctorCard";
 import Empty from "../components/Empty";
+import Loading from "../components/Loading";
+import fetchData from "../helper/apiCall";
+import { setLoading } from "../redux/reducers/rootSlice";
+import "../styles/doctors.css";
 
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);

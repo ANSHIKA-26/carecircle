@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 import { MDBBtn } from "mdb-react-ui-kit";
+import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
 import Empty from "../components/Empty";
+import Loading from "../components/Loading";
 import fetchData from "../helper/apiCall";
 import { setLoading } from "../redux/reducers/rootSlice";
-import Loading from "../components/Loading";
-import { useDispatch, useSelector } from "react-redux";
-import { jwtDecode } from "jwt-decode";
-import axios from "axios";
-import toast from "react-hot-toast";
 import "../styles/user.css";
 
 const PatientAppointments = () => {

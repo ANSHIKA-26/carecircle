@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
-import "../styles/profile.css";
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { setLoading } from "../redux/reducers/rootSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../components/Loading";
 import fetchData from "../helper/apiCall";
-import { jwtDecode } from "jwt-decode";
+import { setLoading } from "../redux/reducers/rootSlice";
+import "../styles/profile.css";
 
 import { MDBBtn } from "mdb-react-ui-kit";
-import Navbar from "../components/Navbar";
 
 function Profile() {
   const { userId } = jwtDecode(localStorage.getItem("token"));
