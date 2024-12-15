@@ -29,7 +29,6 @@ const Notifications = () => {
 
   return (
     <>
-      <Navbar />
       {loading ? (
         <Loading />
       ) : (
@@ -66,7 +65,6 @@ const Notifications = () => {
           )}
         </section>
       )}
-      <Footer />
     </>
   );
 };

@@ -27,7 +27,6 @@ const Doctors = () => {
 
   return (
     <>
-      <Navbar />
       {loading && <Loading />}
       {!loading && (
         <section className="container doctors">
@@ -48,7 +47,6 @@ const Doctors = () => {
           )}
         </section>
       )}
-      <Footer />
     </>
   );
 };

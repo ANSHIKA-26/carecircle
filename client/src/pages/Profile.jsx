@@ -117,7 +117,6 @@ function Profile() {
 
   return (
     <>
-      <Navbar />
       {loading ? (
         <Loading />
       ) : (

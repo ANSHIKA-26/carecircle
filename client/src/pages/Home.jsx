@@ -10,7 +10,6 @@ import Testimonials from "../components/Testimonials";
 const Home = () => {
   return (
     <>
-      <Navbar />
       <section className="content container-1680">
         <Hero />
         <AboutUs />
@@ -18,7 +17,6 @@ const Home = () => {
         <Testimonials/>
         <Contact />
       </section>
-      <Footer />
     </>
   );
 };

@@ -13,9 +13,7 @@ const Appointments = () => {
 
   return (
     <>
-      <Navbar />
       {isDoctor ? <DoctorAppointments /> : <PatientAppointments />}
-      <Footer />
     </>
   );
 };
