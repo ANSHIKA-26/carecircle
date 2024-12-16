@@ -35,13 +35,17 @@ app.get('/api/v1/hello', (req, res) => {
     });
   });
 
-  
+
 app.use("/api/user", userRouter);
 app.use("/api/doctor", doctorRouter);
 app.use("/api/appointment", appointRouter);
 app.use("/api/notification", notificationRouter);
 app.use('/api/doctors', doctorRouter);
 
+
+app.get('/api/healthcheck', (req, res) => {
+  res.status(200).send('OK');
+});
 
 
 app.listen(port, () => {});

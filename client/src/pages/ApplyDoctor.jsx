@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "../styles/register.css";
 import axios from "axios";
-import toast from "react-hot-toast";
 import { MDBBtn } from "mdb-react-ui-kit";
+import React, { useState } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import MinimalNavbar from "../components/MinimalNavbar";
+import "../styles/register.css";
 
 
 function ApplyDoctor() {

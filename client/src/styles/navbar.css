@@ -10,6 +10,7 @@ header {
   background-color: var(--light-blue);
   z-index: 2;
   transition: all 0.2s linear;
+  max-height: 80px;
 }
 
 nav {

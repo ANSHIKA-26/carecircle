@@ -1,8 +1,8 @@
+import axios from "axios";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/register.css";
-import axios from "axios";
-import toast from "react-hot-toast";
 
 import { MDBBtn } from "mdb-react-ui-kit";
 import MinimalNavbar from "../components/MinimalNavbar";

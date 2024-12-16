@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 import { MDBBtn } from "mdb-react-ui-kit";
+import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
 import Empty from "../components/Empty";
+import Loading from "../components/Loading";
 import fetchData from "../helper/apiCall";
 import { setLoading } from "../redux/reducers/rootSlice";
-import Loading from "../components/Loading";
-import { useDispatch, useSelector } from "react-redux";
-import { jwtDecode } from "jwt-decode";
-import axios from "axios";
-import toast from "react-hot-toast";
 import "../styles/user.css";
 
 const PatientAppointments = () => {
@@ -66,76 +66,79 @@ const PatientAppointments = () => {
         <Loading />
       ) : (
         <section className="container notif-section">
-          <h2 className="page-heading">Your Appointments</h2>
+          <div className="row">
+            <h2 className="page-heading">Your Appointments</h2>
 
-          {appointments.length > 0 ? (
-            <div className="appointments">
-              <table>
-                <thead>
-                  <tr>
-                    <th>S.No</th>
-                    <th>Doctor</th>
-                    <th>Patient</th>
-                    <th>Appointment Date</th>
-                    <th>Appointment Time</th>
-                    <th>Booking Date</th>
-                    <th>Booking Time</th>
-                    <th>Status</th>
-                    <th>Link</th>
-                    {userId === appointments[0].doctorId?._id ? (
-                      <th>Action</th>
-                    ) : (
-                      <></>
-                    )}
-                  </tr>
-                </thead>
-                <tbody>
-                  {appointments?.map((ele, i) => {
-                    return (
-                      <tr key={ele?._id}>
-                        <td>{i + 1}</td>
-                        <td>
-                          {ele?.doctorId?.firstname +
-                            " " +
-                            ele?.doctorId?.lastname}
-                        </td>
-                        <td>
-                          {ele?.userId?.firstname + " " + ele?.userId?.lastname}
-                        </td>
-                        <td>{ele?.date}</td>
-                        <td>{ele?.time}</td>
-                        <td>{ele?.createdAt.split("T")[0]}</td>
-                        <td>{ele?.updatedAt.split("T")[1].split(".")[0]}</td>
-                        <td>{ele?.status}</td>
-                        <td>
-                          <a href="https://meet.google.com/abc-defg-edf" target="_blank" rel="noopener noreferrer">
-                            Link for session
-                          </a>
-                        </td>
-                        {userId === ele?.doctorId?._id ? (
+            {appointments.length > 0 ? (
+              <div className="appointments">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>S.No</th>
+                      <th>Doctor</th>
+                      <th>Patient</th>
+                      <th>Appointment Date</th>
+                      <th>Appointment Time</th>
+                      <th>Booking Date</th>
+                      <th>Booking Time</th>
+                      <th>Status</th>
+                      <th>Link</th>
+                      {userId === appointments[0].doctorId?._id ? (
+                        <th>Action</th>
+                      ) : (
+                        <></>
+                      )}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {appointments?.map((ele, i) => {
+                      return (
+                        <tr key={ele?._id}>
+                          <td>{i + 1}</td>
                           <td>
-                            <MDBBtn
-                              className={`btn user-btn accept-btn ${
-                                ele?.status === "Completed" ? "disable-btn" : ""
-                              }`}
-                              disabled={ele?.status === "Completed"}
-                              onClick={() => complete(ele)}
-                            >
-                              Complete
-                            </MDBBtn>
+                            {ele?.doctorId?.firstname +
+                              " " +
+                              ele?.doctorId?.lastname}
                           </td>
-                        ) : (
-                          <></>
-                        )}
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          ) : (
-            <Empty />
-          )}
+                          <td>
+                            {ele?.userId?.firstname + " " + ele?.userId?.lastname}
+                          </td>
+                          <td>{ele?.date}</td>
+                          <td>{ele?.time}</td>
+                          <td>{ele?.createdAt.split("T")[0]}</td>
+                          <td>{ele?.updatedAt.split("T")[1].split(".")[0]}</td>
+                          <td>{ele?.status}</td>
+                          <td>
+                            <a href="https://meet.google.com/abc-defg-edf" target="_blank" rel="noopener noreferrer">
+                              Link for session
+                            </a>
+                          </td>
+                          {userId === ele?.doctorId?._id ? (
+                            <td>
+                              <MDBBtn
+                                className={`btn user-btn accept-btn ${
+                                  ele?.status === "Completed" ? "disable-btn" : ""
+                                }`}
+                                disabled={ele?.status === "Completed"}
+                                onClick={() => complete(ele)}
+                              >
+                                Complete
+                              </MDBBtn>
+                            </td>
+                          ) : (
+                            <></>
+                          )}
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <Empty />
+            )}
+
+          </div>
         </section>
       )}
     </>
